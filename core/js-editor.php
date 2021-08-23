@@ -44,4 +44,11 @@ function user_updator($id)
     $link = new Js_path();
     $post->user_updator('..'.$link->get_CorePath().'/js-api.php?update=user',$row,$id);
 }
-
+
+
+function user_simple_editor()
+{
+    $post = new Editor();
+    $link = new Js_path();
+    $post->user_simple_editor('..'.$link->get_CorePath().'/js-users.php?ops=create');
+}

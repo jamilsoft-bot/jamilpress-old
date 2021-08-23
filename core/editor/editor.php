@@ -143,4 +143,20 @@ class Editor
               echo "<label for='Nickname' class='form-label'>Nick Name</label>";
               echo "<input type='text' name='NickName' value='".$row['User_nick']."' class='form-control' placeholder='e.g jamilsoft'>";
               echo "<label for='Email' class='form-label'>Email Address</label>";
-              echo "<input type='text' name='Email' value='".$row['UserEmail']."' class='form-control' placeholder='e.g someone@
+              echo "<input type='text' name='Email' value='".$row['UserEmail']."' class='form-control' placeholder='e.g someone@compony.com'>";
+              
+              echo "<label for='City' class='form-label'>City</label>";
+              echo "<input type='text' name='City' value='".$row['City']."' class='form-control' placeholder='e.g Bauchi'>";
+              echo "<label for='Country' class='form-label'>Country</label>";
+              echo "<input type='text' name='Country' value='".$row['Country']."' class='form-control' placeholder='e.g Nigeria'>";
+              echo "<center><label for='Bio' class='form-label'>User Biography</label></center>";
+              echo "<br><br><textarea name='Bio' class='shadow w-100 rounded border d-block' id='output' cols='30' rows='10'> ".$row['Bio']." </textarea><br><br>";
+             
+               
+               echo " <br><br>";
+             
+              echo "<input type='submit' name='submit' class='w-100 btn btn-lg btn-primary' value='Submit'></form>";
+                
+    }
+    
+}
