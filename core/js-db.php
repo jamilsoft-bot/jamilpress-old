@@ -283,6 +283,69 @@ public  function Retrive_post($mode = 'All',$Post_Id =0){
         
         }
 
+        public  function Update_page($post_id, $Post = array(
+
+               
+         'Content' => 'let me test the update function',
+         'Title' => 'testing a class',
+         'Excerpt' =>'let me',
+         'Status' =>'draft',
+         'Link' => 'test',
+         'Type' => 'page',
+         'Password' =>'',
+         'comment_count' => 0
+
+    )){
+     $Ndate = new DateTime();
+    
+     $Content    = $Post['Content'];
+     $Title      = $Post['Title'];
+     $Excerpt    = $Post['Excerpt'];
+     $Status     = $Post['Status'];
+     $Link       = $Post['Link'];
+     $Type       = $Post['Type'];
+     $Password   = $Post['Password'];
+     $comment_count  = $Post['comment_count'];
+     $Modified = $Ndate->format('Y-m-d H:i:s');
+      
+
+     $sql = "UPDATE `posts` SET `Content`='".$Content."',`Title`='".$Title."',`Excerpt`='".$Excerpt."',`Status`='".$Status."',`Password`='".$Password."',`Modified`='".$Modified."',`Link`='".$Link."',`Type`='".$Type."',`comment_count`='".$comment_count."' WHERE `Id`=".$post_id;
+     global $Connector;
+
+     return  $Connector->query($sql);
+ 
+ }
+
+        public  function Insert_page($Post =  array(
+         'Author' => 'Muhammad Jamil',
+         'Content' => 'let me test this class',
+         'Title' => 'testing a class',
+         'Excerpt' =>'let me',
+         'Status' =>'draft',
+         'Link' => 'test',
+         'Type' => 'page',
+         'Password' =>'',
+         'comment_count' => 0))
+         {
+     $Author     = $Post['Author'];
+     $Content    = $Post['Content'];
+     $Title      = $Post['Title'];
+     $Excerpt    = $Post['Excerpt'];
+     $Status     = $Post['Status'];
+     $Link       = $Post['Link'];
+     $Type       = $Post['Type'];
+     $Password   = $Post['Password'];
+     $comment_count  = $Post['comment_count'];
+
+     $sql = " INSERT INTO `posts`( `Author`, `Content`, `Title`, `Excerpt`, `Status`, `Password`, `Link`, `Type`, `comment_count`) VALUES ('".$Author."','".$Content."','".$Title."','".$Excerpt."','".$Status."','".$Password."','".$Link."','".$Type."','".$comment_count."')";
+
+
+
+ global $Connector;
+return  $Connector->query($sql);
+ 
+ }
+
 public  function Retrive_pages(){
 
          

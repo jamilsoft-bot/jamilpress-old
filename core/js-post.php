@@ -72,6 +72,8 @@ public function create($Post =  array(
     }
 }
 
+
+
 public function update($id, $dat = array())
 {
     $data = new Js_DB();

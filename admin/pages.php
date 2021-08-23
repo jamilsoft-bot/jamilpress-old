@@ -20,12 +20,12 @@ if (isset($_GET["workspace"])) {
             break;
         case 'update':
             if (isset($_GET['id'])) {
-                post_updator($_GET['id']);
+                page_updator($_GET['id']);
             }
             
             break;
         case 'create':
-            post_simple_editor();// post_editor();
+            page_simple_editor();// post_editor();
             break;
         default:
         echo "<input type='email' class='form-control' placeholder='default' id='exampleInputEmail1' aria-describedby='emailHelp'>";

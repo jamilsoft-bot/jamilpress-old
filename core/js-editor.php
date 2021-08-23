@@ -21,7 +21,7 @@ function page_simple_editor()
 {
     $post = new Editor();
     $link = new Js_path();
-    $post->post_simple_editor('..'.$link->get_CorePath().'/js-post.php?ops=create');
+    $post->page_simple_editor('..'.$link->get_CorePath().'/js-pages.php?ops=create');
 }
 
 function post_updator($id)
@@ -32,6 +32,17 @@ function post_updator($id)
     $post = new Editor();
     $link = new Js_path();
     $post->post_updator('..'.$link->get_CorePath().'/js-post.php?ops=update',$row,$id);
+}
+
+
+function page_updator($id)
+{
+    $db = new Js_DB();
+    $data = $db->Retrive_post('Single',$id);
+    $row = $db->Rows($data);
+    $post = new Editor();
+    $link = new Js_path();
+    $post->post_updator('..'.$link->get_CorePath().'/js-pages.php?ops=update',$row,$id);
 }
 
 

@@ -23,7 +23,7 @@ class Js_Post
          public   $Password;
          public   $comment_count;*/
 
-public     function list()
+/*public     function list()
 {
     $data = new Js_DB();
     $result = $data->Retrive_post('All');
@@ -46,7 +46,7 @@ public     function list()
     }
 
    echo "</table>";
-}
+}*/
 private $Status;
 public function get_error()
 {
@@ -75,7 +75,7 @@ public function create($Post =  array(
 public function update($id, $dat = array())
 {
     $data = new Js_DB();
-    if ($data->Update_post($id,$dat)) {
+    if ($data->Update_page($id,$dat)) {
         return 'Ok';
     }else{
         return $this->Status = $data->DBError;
@@ -108,6 +108,10 @@ function execute($mode = '')
            
         
             $process = new Js_Post();
+            $p = new Js_DB();
+            
+            
+            
             $data = array(
                 'Title' => $Title,
                 'Content'=> $Content,
@@ -115,7 +119,7 @@ function execute($mode = '')
                 'Author' => 'unknown',
                 'Status' =>'draft',
                 'Link' => '',
-                'Type' => 'post',
+                'Type' => 'page',
                 'Password' =>'',
                 'comment_count' => 0
             );
@@ -131,7 +135,7 @@ function execute($mode = '')
                     case 'update':
                         if (isset($_POST['Id'])) {
                             $Id = htmlspecialchars($_POST['Id']);
-                            if ($process->update($Id,$data) == 'Ok') {
+                            if ($p->Update_page($Id,$data) == 'Ok') {
                                 echo "<script>window.history.back()</script>";
                             }else{
                                 echo $process->get_error();
