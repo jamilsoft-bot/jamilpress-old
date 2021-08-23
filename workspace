@@ -1,0 +1,11 @@
+for p in prog:
+    for c in child:
+        
+        f.write("""\
+       public  function """+c+"_"+p+"""($"""+p+""" = array()){
+
+            global $Connector;
+            return $Connector->query();
+            
+            }
+        """)
