@@ -24,6 +24,13 @@ function page_simple_editor()
     $post->page_simple_editor('..'.$link->get_CorePath().'/js-pages.php?ops=create');
 }
 
+function comment_simple_editor($PID)
+{
+    $post = new Editor();
+    $link = new Js_path();
+    $post->comment_simple_editor('..'.$link->get_CorePath().'/js-comment.php?ops=create',$PID);
+}
+
 function post_updator($id)
 {
     $db = new Js_DB();
@@ -43,6 +50,19 @@ function page_updator($id)
     $post = new Editor();
     $link = new Js_path();
     $post->post_updator('..'.$link->get_CorePath().'/js-pages.php?ops=update',$row,$id);
+}
+
+function comment_updator($id)
+{
+   /** */ $db = new Js_DB();
+    $data = $db->Retrive_Comment('Single',$id);
+   // $r = mysqli_assoc();
+    $row = $db->Rows($data);
+    $post = new Editor();
+    $link = new Js_path();
+    $post->comment_updator('..'.$link->get_CorePath().'/js-comment.php?ops=update',$row,$id);/***/
+
+  
 }
 
 

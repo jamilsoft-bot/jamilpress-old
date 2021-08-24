@@ -58,6 +58,42 @@ public     function list()
    echo "</table>";
 }
 
+
+public     function list_comment()
+{
+    /*
+$Post_Id =   $Comment['Post_Id'];
+$Comment_Author =   $Comment['Comment_Author'];
+$Content =   $Comment['Content'];
+$Author_email =   $Comment['Author_email'];
+$Author_link =   $Comment['Author_link'];
+$Title =   $Comment['Title'];
+$Status =   $Comment['Status'];
+$Author_Ip =  $_SERVER['SERVER_ADDR'];
+     */
+    $data = new Js_DB();
+    $result = $data->Retrive_Comment();
+    
+    echo "<table class='table table-striped table-hover table-sm'><thead><tr><th>Comment ID</th><th>Comment Author</th><th>Author Email</th><th>Post Id</th><th>Author website</th><th>Date created</th><th>Date Modified</th><th>Operation</th></tr></thead>";
+    foreach ($result as $row) {
+        echo "<tr>";
+        echo "<td>" . $row['Comment_Id'] . "</td>";
+        echo "<td>" . $row['Comment_Author'] . "</td>";
+        echo "<td>" . $row['Author_email'] . "</td>";
+        echo "<td>" . $row['Post_Id'] . "</td>";
+        echo "<td>" . $row['Author_link'] . "</td>";
+        echo "<td>" . $row['Date'] . "</td>";
+        echo "<td>" . $row['Modified'] . "</td>";
+        echo "<td><a href='#' data-bs-toggle='tooltip' data-bs-placement='top' title='View the Post'><i class='fas fa-eye'></i></a>,<a href='?workspace=update&id=" . $row['Comment_Id']."' data-bs-toggle='tooltip' data-bs-placement='top' title='Modify the Post'><i class='fas fa-edit'></i></a>,<a href='../core/js-api.php?delete=comment&Id=" . $row['Comment_Id']."' data-bs-toggle='tooltip' data-bs-placement='top' title='Delete the Post'><i class='fas fa-trash-alt'></i></a> </td>";
+        echo "</tr>";
+        
+
+        //echo $row['Title'];
+    }
+
+   echo "</table>";
+}
+
 public     function list_pages()
 {
     $data = new Js_DB();
@@ -494,6 +530,7 @@ function execute_user($mode = '')
                     
                     break;
                 case 'comment':
+                    
                    
                     break;
                 
@@ -544,7 +581,8 @@ function execute_user($mode = '')
                    $op = $process->Delete_Comment($Id);
                    
                    if ($op !== "") {
-                    echo "<script>alert('user Id ".$Id. " is deleted')</script>";
+                    echo "<script>alert('Comment Id ".$Id. " is deleted')</script>";
+                    echo "<script>window.history.back()</script>";
                    }
                    
                     break;

@@ -23,6 +23,15 @@ function page_list()
    echo "</div>";
 }
 
+function comment_list()
+{
+    echo "<h2> Comment list</h2>";
+   echo " <div class='table-responsive'>";
+   $dt = new Js_Post();
+    $dt->list_comment();
+   echo "</div>";
+}
+
 function user_list()
 {
     echo "<h2> User list</h2>";

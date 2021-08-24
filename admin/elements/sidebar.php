@@ -28,15 +28,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="comments.php">
               <span data-feather="bar-chart-2"></span>
-              Reports
+              Comments
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="settings.php">
               <span data-feather="layers"></span>
-              Integrations
+              Settings
             </a>
           </li>
         </ul>

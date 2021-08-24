@@ -389,7 +389,7 @@ $Author_Ip =  $_SERVER['SERVER_ADDR']; //$Comment['Author_Ip'];
            public  function Delete_Comment($Comment_id){
 
             if ($Comment_id == (int)$Comment_id) {
-               $sql = "DELETE FROM `comments` WHERE Id =".(int)$Comment_id;
+               $sql = "DELETE FROM `comments` WHERE Comment_Id =".(int)$Comment_id;
 
                global $Connector;
                return   $Connector->query($sql);
@@ -423,7 +423,7 @@ $Title =   $Comment['Title'];
 $Status =   $Comment['Status'];
 $Author_Ip =  $_SERVER['SERVER_ADDR'];
 
-      $sql = "UPDATE `comments` SET `Post_Id`=".$Post_Id.",`Comment_Author`='".$Comment_Author."',`Content`='".$Content."',`Author_email`='".$Author_email."',`Author_link`='".$Author_link."',`Title`='".$Title."',`Status`='".$Status."',`Modified`=CURRENT_TIMESTAMP,`Modified_ip`='".$Author_Ip."' WHERE `Comment_Id`=1";
+      $sql = "UPDATE `comments` SET `Post_Id`=".$Post_Id.",`Comment_Author`='".$Comment_Author."',`Content`='".$Content."',`Author_email`='".$Author_email."',`Author_link`='".$Author_link."',`Title`='".$Title."',`Status`='".$Status."',`Modified`=CURRENT_TIMESTAMP,`Modified_ip`='".$Author_Ip."' WHERE `Comment_Id`=". $Comment_id;
         global $Connector;
         return $Connector->query($sql);
         
@@ -434,11 +434,11 @@ $Author_Ip =  $_SERVER['SERVER_ADDR'];
          * @param $mode | specify where Single row fetching or All rows, Default is All
          * @param $Comment_Id | Specify the id of the comment if single
          */
-           public  function Retrive_Comment($mode='All', $Comment_Id = null){
+           public  function Retrive_Comment($mode='All', $Comment_Id = 0 ){
 
             switch ($mode) {
                case 'Single':
-       $sql = "SELECT * FROM `comments` WHERE Id=" . $Comment_Id;
+       $sql = "SELECT * FROM `comments` WHERE Comment_Id=" . $Comment_Id;
        global $Connector;
        return $Connector->query($sql);
                   break;
