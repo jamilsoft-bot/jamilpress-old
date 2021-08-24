@@ -13,6 +13,7 @@
     
 
     <!-- Bootstrap core CSS -->
+    <link href="w3.css" rel="stylesheet">
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/font/css/all.css">
 
@@ -32,6 +33,7 @@
         }
       }
     </style>
+    <link href="sidebars.css" rel="stylesheet">
 
     
     <!-- Custom styles for this template -->
