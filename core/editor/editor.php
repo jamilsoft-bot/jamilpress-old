@@ -89,7 +89,7 @@ class Editor
       echo "<label for='username' class='form-label'>Website address</label>";
       echo "<input type='text' name='Author_link' class='form-control' value='".$data['Author_link']."' placeholder='e.g http://www.someone.com'>";
       //echo "<label for='Nickname' class='form-label'>Nick Name</label>";
-      echo "<input type='text' style='display:none' name='P_id' value='".$data['Post_Id']."' class='form-control' placeholder='e.g jamilsoft'>";
+      echo "<input type='text' style='display:none' name='P_id' value='".$data['Author_link']."' class='form-control' placeholder='e.g jamilsoft'>";
       echo "<label for='Email' class='form-label'>Email Address</label>";
       echo "<input type='text' name='Email' value='".$data['Author_email']."' class='form-control' placeholder='e.g someone@compony.com'>";
       
@@ -108,6 +108,42 @@ class Editor
         
     }
 
+    public function setting_updator($post_action,$js_option = array(
+      'Option_Name' => '',
+      'Option_Value' => '',
+      'Autoload' => "yes"
+   ),$Id )
+    {
+      echo "<form action='".$post_action."' method='post'>\n";
+              
+              
+      echo "<table width='1100'><tr><td><label for='fullname' class='form-label'>Setting name</label>";
+      echo "<input type='text' name='OptionName' disabled='true' class='form-control' value='".$js_option['Option_Name']."'>";
+      echo "<input type='text' style='display:none'  name='OptionName'  class='form-control' value='".$js_option['Option_Name']."'>";
+
+      echo "</td><td><label for='username' class='form-label'>Setting Value</label>";
+      echo "<input type='text' name='OptionValue' class='form-control' value='".$js_option['Option_Value']."' placeholder='e.g http://www.someone.com'>";
+      //echo "<label for='Nickname' class='form-label'>Nick Name</label>";
+     // echo "<input type='text' style='display:none' name='P_id' value='".$data['Author_link']."' class='form-control' placeholder='e.g jamilsoft'>";
+      echo "</td><td><label for='Email' class='form-label'>Autoload?</label>";
+      echo "<input type='text' name='Autoload' value='".$js_option['Autoload']."' class='form-control'></td></tr></table>";
+      
+      
+     // echo "<label for='City' class='form-label'>City</label>";
+      echo "<input type='text' style='display:none' name='id' class='form-control' value='".$Id."' placeholder='e.g Bauchi'>";
+     // echo "<label for='Country' class='form-label'>Country</label>";
+     // echo "<input type='text' name='Country' class='form-control' placeholder='e.g Nigeria'>";
+     // echo "<br><br><center><label for='Bio' class='form-label'>Content</label></center>";
+     // echo "<textarea name='Content' class='shadow w-100 rounded border d-block' id='output' cols='30' rows='10'>".$data['Content']."</textarea><br><br>";
+     
+       
+      // echo "  <label for='Password' class='form-label'>User Password</label>";
+      // echo " <input type='Password' name='Password' maxlength='50' class='form-control' placeholder='Password'> <br><br>";
+     
+      echo "</td><td><input type='submit' name='submit' class='w-100 btn btn-lg btn-primary' value='Submit'></form>";
+      // echo "<input type='radio' name='options' value='test' id='option2'> Radio 2" ;
+      // echo "<input type='radio' name='options' id='option1'> Radio 1" ;
+    }
 
     public function post_editor($post_action)
     {

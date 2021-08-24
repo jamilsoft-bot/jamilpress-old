@@ -24,10 +24,12 @@ class Js_User
          public   $Password;
          public   $comment_count;*/
 
-public     function list()
+public     function list(&$getRowsN)
 {
     $data = new Js_DB();
     $result = $data->Retrive_user('All');
+
+    $getRowsN = $result->num_rows;
     
     echo "<table class='table table-striped table-hover table-sm'><thead><tr><th>ID</th><th>Username</th><th>Full Name</th><th>City</th><th>Country</th><th>Date created</th><th>Date Modified</th><th>Operation</th></tr></thead>";
     foreach ($result as $row) {

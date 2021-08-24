@@ -487,7 +487,7 @@ $Author_Ip =  $_SERVER['SERVER_ADDR'];
            public  function Update_Js_option($js_option_id = 0, $js_option = array(
               'key' => '',
               'value' => '',
-              'autoload' => "yes"
+              'autoload' => 'yes'
            )){
               $key = $js_option['key'];
               $value = $js_option['value'];
@@ -497,10 +497,10 @@ $Author_Ip =  $_SERVER['SERVER_ADDR'];
         return $Connector->query($sql);
         
         }
-           public  function Retrive_Js_option($js_option = 'All', $js_option_key = ''){
+           public  function Retrive_Js_option($js_option = 'All', $js_option_id = 0){
             switch ($js_option) {
                case 'Single':
-                  $sql = "SELECT * FROM `js_options` WHERE `Option_Name`=". $js_option_key;
+                  $sql = "SELECT * FROM `js_options` WHERE `Option_Id`=". $js_option_id;
                   global $Connector;
                   return $Connector->query($sql);
                   break;

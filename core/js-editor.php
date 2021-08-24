@@ -65,6 +65,19 @@ function comment_updator($id)
   
 }
 
+function setting_updator($id)
+{
+   /** */ $db = new Js_DB();
+    $data = $db->Retrive_Js_option('Single',$id);
+   // $r = mysqli_assoc();
+    $row = $db->Rows($data);
+    $post = new Editor();
+    $link = new Js_path();
+    $post->setting_updator('..'.$link->get_CorePath().'/js-option.php?update',$row,$id);/***/
+   // echo $row['Option_Name'];
+  
+}
+
 
 function user_updator($id)
 {

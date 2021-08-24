@@ -20,8 +20,9 @@ if (isset($_GET["workspace"])) {
             break;
         case 'update':
             if (isset($_GET['id'])) {
-                Comment_updator($_GET['id']);
+                setting_updator($_GET['id']);
             }
+            setting_list();
             
             break;
         case 'create':
@@ -32,7 +33,7 @@ if (isset($_GET["workspace"])) {
             break;
     }
 }else {
-   //comment_list();
+   setting_list();
 }
     
 

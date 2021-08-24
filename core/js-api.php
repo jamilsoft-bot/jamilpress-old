@@ -120,6 +120,36 @@ public     function list_pages()
 }
 
 
+public     function setting_list()
+{
+    $data = new Js_DB();
+    $result = $data->Retrive_Js_option();
+    
+    echo "<table class='table table-striped table-hover table-sm'><thead><tr><th> Settings ID</th><th>Setting Name</th><th>Setting Value</th><th>Autoload?</th><th>Operation</th></tr></thead>";
+    foreach ($result as $row) {
+        echo "<tr>";
+        echo "<td>" . $row['Option_Id'] . "</td>";
+        echo "<td>" . $row['Option_Name'] . "</td>";
+        echo "<td>" . $row['Option_Value'] . "</td>";
+        echo "<td>" . $row['Autoload'] . "</td>";
+        
+        echo "<td><a href='#' data-bs-toggle='tooltip' data-bs-placement='top' title='View the Post'><i class='fas fa-eye'></i></a>,<a href='?workspace=update&id=" . $row['Option_Id']."' data-bs-toggle='tooltip' data-bs-placement='top' title='Modify the Post'><i class='fas fa-edit'></i></a>,<a href='../core/js-apir.php?delete=post&Id=" . $row['Option_Id']."' data-bs-toggle='tooltip' data-bs-placement='top' title='Delete the Post'><i class='fas fa-trash-alt'></i></a> </td>";
+        echo "</tr>";
+        
+        
+
+        //echo $row['Title'];
+    }
+
+   echo "</table>";
+}
+
+
+
+
+
+
+
 private $Status;
 public function get_error()
 {
@@ -274,10 +304,12 @@ function execute($mode = '')
          public   $Password;
          public   $comment_count;*/
 
-public     function list()
+public     function list(&$getRowsN)
 {
     $data = new Js_DB();
     $result = $data->Retrive_user('All');
+
+    $getRowsN = $result->num_rows;
     
     echo "<table class='table table-striped table-hover table-sm'><thead><tr><th>ID</th><th>Username</th><th>Full Name</th><th>City</th><th>Country</th><th>Date created</th><th>Date Modified</th><th>Operation</th></tr></thead>";
     foreach ($result as $row) {

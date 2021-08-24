@@ -18,11 +18,10 @@ if (isset($_GET["workspace"])) {
 
     switch (htmlspecialchars($_GET["workspace"])) {
         case 'list':
-            user_list();
+            
             break;
         case 'edit':
-            echo "<input type='email' class='form-control' placeholder='edit' id='exampleInputEmail1' aria-describedby='emailHelp'>
-            ";
+            
             break;
         case 'update':
             if (isset($_GET['id'])) {
@@ -39,7 +38,11 @@ if (isset($_GET["workspace"])) {
             break;
     }
 }else {
-   user_list();
+    $rows = 0;
+   // echo "<h1 id='tl'></h1>";
+   user_list($rows);
+
+   //echo "\n<script>document.getElementById('tl').innerHTML = '" . $rows. "'</script>";
 }
     
 
