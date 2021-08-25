@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("../config.inc");
+require("../config.inc");
 
         
 $Connector = new mysqli($Conn_data['dbhost'],$Conn_data['dbuser'],$Conn_data['dbpass'],$Conn_data['dbname']);
@@ -186,11 +186,13 @@ class Js_DB
                 'Status' =>'draft',
                 'Link' => 'test',
                 'Type' => 'post',
+                'post_parent' =>'uncatigorized',
                 'Password' =>'',
                 'comment_count' => 0))
                 {
             $Author     = $Post['Author'];
             $Content    = $Post['Content'];
+            $parent    = $Post['post_parent'];
             $Title      = $Post['Title'];
             $Excerpt    = $Post['Excerpt'];
             $Status     = $Post['Status'];
@@ -199,7 +201,7 @@ class Js_DB
             $Password   = $Post['Password'];
             $comment_count  = $Post['comment_count'];
 
-            $sql = " INSERT INTO `posts`( `Author`, `Content`, `Title`, `Excerpt`, `Status`, `Password`, `Link`, `Type`, `comment_count`) VALUES ('".$Author."','".$Content."','".$Title."','".$Excerpt."','".$Status."','".$Password."','".$Link."','".$Type."','".$comment_count."')";
+            $sql = " INSERT INTO `posts`( `Author`, `Content`, `Title`, `Excerpt`, `Status`, `Password`, `Link`, `Type`,`post_parent`, `comment_count`) VALUES ('".$Author."','".$Content."','".$Title."','".$Excerpt."','".$Status."','".$Password."','".$Link."','".$Type."','".$parent."','".$comment_count."')";
 
 
 
@@ -232,6 +234,7 @@ class Js_DB
                 'Status' =>'draft',
                 'Link' => 'test',
                 'Type' => 'post',
+                'post_parent' =>'',
                 'Password' =>'',
                 'comment_count' => 0
 
@@ -239,6 +242,7 @@ class Js_DB
             $Ndate = new DateTime();
            
             $Content    = $Post['Content'];
+            $parent    = $Post['post_parent'];
             $Title      = $Post['Title'];
             $Excerpt    = $Post['Excerpt'];
             $Status     = $Post['Status'];
@@ -249,7 +253,7 @@ class Js_DB
             $Modified = $Ndate->format('Y-m-d H:i:s');
              
 
-            $sql = "UPDATE `posts` SET `Content`='".$Content."',`Title`='".$Title."',`Excerpt`='".$Excerpt."',`Status`='".$Status."',`Password`='".$Password."',`Modified`='".$Modified."',`Link`='".$Link."',`Type`='".$Type."',`comment_count`='".$comment_count."' WHERE `Id`=".$post_id;
+            $sql = "UPDATE `posts` SET `Content`='".$Content."',`post_parent`='".$parent."',`Title`='".$Title."',`Excerpt`='".$Excerpt."',`Status`='".$Status."',`Password`='".$Password."',`Modified`='".$Modified."',`Link`='".$Link."',`Type`='".$Type."',`comment_count`='".$comment_count."' WHERE `Id`=".$post_id;
             global $Connector;
 
             return  $Connector->query($sql);

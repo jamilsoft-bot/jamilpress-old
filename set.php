@@ -1,1 +1,3 @@
-UPDATE `posts` SET `Author`='updating',`Content`='[value-4]',`Title`='[value-5]',`Excerpt`='[value-6]',`Status`='[value-7]',`Password`='[value-8]',`Modified`='[value-9]',`Link`='[value-10]',`Type`='[value-11]',`comment_count`='[value-12]' WHERE `Id`= 4
+<?php
+
+    $vartest = "checked";

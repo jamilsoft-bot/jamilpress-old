@@ -60,6 +60,7 @@ public function create($Post =  array(
     'Status' =>'draft',
     'Link' => '',
     'Type' => 'post',
+    'post_parent' =>'',
     'Password' =>'',
     'comment_count' => 0))
 {   
@@ -107,6 +108,10 @@ function execute($mode = '')
             $Title =  htmlspecialchars($_POST['title']);
             $Content =  htmlspecialchars($_POST['content']);
             $excerpt = htmlspecialchars($_POST['excerpt']);
+            $author = htmlspecialchars($_POST['Author']);
+            $status = htmlspecialchars($_POST['status']);
+            $type = htmlspecialchars($_POST['type']);
+            $parent = htmlspecialchars($_POST['parent']);
            
         
             $process = new Js_Post();
@@ -114,10 +119,11 @@ function execute($mode = '')
                 'Title' => $Title,
                 'Content'=> $Content,
                 'Excerpt' => $excerpt,
-                'Author' => 'unknown',
-                'Status' =>'draft',
+                'Author' => $author,
+                'Status' =>$status,
                 'Link' => '',
-                'Type' => 'post',
+                'Type' => $type,
+                'post_parent' =>$parent,
                 'Password' =>'',
                 'comment_count' => 0
             );

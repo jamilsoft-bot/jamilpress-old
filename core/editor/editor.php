@@ -2,7 +2,66 @@
 
 class Editor
 {
-    public function post_simple_editor($post_action)
+  public function simple_editor($post_action)
+  {
+           
+    
+    
+
+    echo "<div class='w3-row ' style='height: 100%;'>";
+    echo "<div class='w3-col w3-card w3-padding w3-margin w3-threequarter' style='width: 69%;'>";
+     echo "   <form action='".$post_action."' method='post' class='w3-container'>";
+            echo "<h3 class='w3-text-blue'> Title</h3>";
+            echo "<input type='text' name='title' placeholder='The post title' class=' w3-input  w3-border' id=''>";
+            echo "<h3 class='w3-margin'> Content</h3>";
+            echo "<textarea class='w3-input w3-border font-header'  rows='14' name='content'></textarea>";
+            echo "<h3>Excerpt</h3>";
+            echo "<input type='text' name='excerpt' placeholder='The post summery' class='font-header w3-input  w3-border' id=''>";
+            
+    echo "</div>";
+    echo "<div class='w3-col w3-card w3-margin w3-padding w3-quarter'>";
+        echo "<h3>Status</h3>";
+        echo "<select name='status' class='w3-select font-header w3-border'>";
+            echo "<option value='Publish'>Publish now</option>";
+            echo "<option value='Draft'>Keep draft</option>";
+      echo "</select>";
+        echo "<h3>Content type</h3>";
+        echo "<select name='type' value='cat' class='w3-border font-header w3-select'>";
+            echo "<option value='Page'>Page</option>";
+            echo "<option value='Post'>Blog</option>";
+            echo "<option value='cat'>Category</option>";
+            echo "<option value='tag'>Tag</option>";
+        echo "</select>";
+        echo "<h3>Content Category</h3>";
+        echo "<select name='parent' class='w3-border font-header w3-select'>";
+            echo "<option value='Entertaiment'>Entertaiment</option>";
+            echo "<option value='Sport'>Sport</option>";
+            echo "<option value='Business'>Business</option>";
+            echo "<option value='uncatigorized'>uncatigorized</option>";
+       echo "</select>";
+
+        echo "<h3>Tag</h3>";
+        echo "<input type='text' name='tag' class=' font-header w3-input  w3-border' id=''>";
+
+        echo "<h3> Author</h3>";
+        echo "<input type='text' name='Author' class=' font-header w3-input  w3-border' id=''>";
+        echo "<h3>&ThickSpace;</h3>";
+        echo "<input type='submit' name='submit' class=' font-header w3-input w3-button w3-blue w3-btn' value='submit' id=''>";
+    echo "</div>";
+echo "</div>";
+
+ echo "</form>";
+
+
+
+    
+  }
+  
+  
+  
+  
+  
+  public function post_simple_editor($post_action)
     {
        echo "<form action='".$post_action."' method='post'><br><br>";
               

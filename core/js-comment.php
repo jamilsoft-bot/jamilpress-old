@@ -1,7 +1,8 @@
 <?php
+
      require('js-db.php');
 
-  //  $postData = new Js_DB();
+  
 
   if (isset($_POST['submit'])) {
     execute('post-data');

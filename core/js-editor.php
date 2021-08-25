@@ -10,6 +10,13 @@ function post_editor()
     $post->post_editor('..'.$link->get_CorePath().'/js-post.php');
 }
 
+function simple_editor()
+{
+    $post = new Editor();
+    $link = new Js_path();
+    $post->simple_editor('..'.$link->get_CorePath().'/js-post.php?ops=create');
+}
+
 function post_simple_editor()
 {
     $post = new Editor();

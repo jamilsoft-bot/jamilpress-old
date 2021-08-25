@@ -24,6 +24,12 @@
             font-size: 3.5rem;
           }
         }
+        .font-header{
+    font-size: 16pt;
+}
+      h3{
+    color: rgb(121, 193, 252);
+      }
       </style>
 
 <link href="assets/css/sidebars.css" rel="stylesheet">
@@ -38,7 +44,7 @@
     </a>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">Home</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">Settings</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">Documentationa</a></li>
