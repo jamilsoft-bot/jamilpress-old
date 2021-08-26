@@ -26,7 +26,8 @@ if (isset($_GET["workspace"])) {
             
             break;
         case 'create':
-            comment_simple_editor(2);// post_editor();
+            //comment_simple_editor(2);// post_editor();
+            ops_text();
             break;
         default:
         echo "<input type='email' class='form-control' placeholder='default' id='exampleInputEmail1' aria-describedby='emailHelp'>";

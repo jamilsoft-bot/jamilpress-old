@@ -20,6 +20,11 @@ function admin_head(){
     addstyle(array("test1","test2"));
 }
 
+function ops_text(){
+   // addstyle(array("test1","test2"));
+   echo "oops something went wrong";
+}
+
 
 
 ?>

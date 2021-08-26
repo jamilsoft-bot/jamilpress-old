@@ -14,7 +14,7 @@
               <div class="card-body">
                 <h5 class="card-title">Pages</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Create new page</a>
+                <a href="pages.php?workspace=create" class="btn btn-primary">Create new page</a>
               </div>
               <div class="card-footer text-muted">
                 2 days ago
@@ -29,7 +29,7 @@
               <div class="card-body">
                 <h5 class="card-title">Users</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add new users</a>
+                <a href="users.php?workspace=create" class="btn btn-primary">Add new users</a>
               </div>
               <div class="card-footer text-muted">
                 2 days ago
@@ -44,7 +44,7 @@
               <div class="card-body">
                 <h5 class="card-title">Post</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Create new Post</a>
+                <a href="post.php?workspace=create" class="btn btn-primary">Create new Post</a>
               </div>
               <div class="card-footer text-muted">
                 2 days ago
@@ -59,7 +59,7 @@
               <div class="card-body">
                 <h5 class="card-title">Comment</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Check comments</a>
+                <a href="comments.php" class="btn btn-primary">Check comments</a>
               </div>
               <div class="card-footer text-muted">
                 2 days ago
