@@ -142,7 +142,7 @@ public     function advance_setting_list()
 
    echo "</table>";*/
 
-   echo "<div class="
+  // echo "<div class="
 }
 
 
