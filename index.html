@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> understanding div</title>
+
+<link href="w3.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="">
+<div class="w3-bar  w3-green">
+<div class="w3-bar-item">
+<h3>
+
+U.com
+</h3>
+</div>
+
+<div class="w3-bar-item w3-right">
+<li class="w3-bar-item w3-hover-green"> Home</li>
+<li class="w3-bar-item w3-hover-green"> About</li>
+<li class="w3-bar-item w3-hover-green"> Contact</li>
+<li class="w3-bar-item w3-hover-green"> Help</li>
+</div>
+
+
+</div>
+
+</div>
+
+
+<p><a href="w3.css"> click here </a> to download</p>
+
+<li class="w3-button w3-border-blue"> button</li>
+
+<!--
+
+<ol>
+<li>list </li>
+<li>list </li>
+<li>list </li>
+<li>list </li>
+<li>list </li>
+</ol>
+
+<input type="file" name="file-uploads" value="control-name"/>
+<p class="myclass" id="output"> my paragraph </p>
+
+
+<hr>
+<div class="navigation">
+	<p style="" class="myclass"> my paragraph in navigation </p>
+
+	<h1>my heading 1 in navigation</h1>
+</div>
+<hr>
+<div class="main">
+<p style="color:blue; font-size:80pt;" id="main"> my paragraph in main </p>
+
+<h1>my heading 1 in main </h1>
+</div>
+
+<hr>
+<div  id="top">
+<p> my paragraph in top </p>
+
+<h1>my heading 1 in top </h1>
+</div>-->
+
+<p> Type your age </p>
+<form >
+
+<input type="text" id="age" placeholder="type your age" required/>
+<br>
+<input type="submit" value="check age" id="btn"/>
+</form>
+
+<br>
+<h1 id="out"></h1>
+		
+<script>
+
+var age = document.getElementById("age");
+var  btn1 = document.getElementById("btn");
+var  out1 = document.getElementById("out");
+
+btn1.onclick = function(){
+
+var x = Number(age.value);
+//alert("worked")
+if(x >= 40){
+	out1.innerHTML =" you are an adult";
+}else if(x <= 40){
+	
+	out1.innerHTML =" you are youth";
+
+}else{
+
+	out1.innerHTML =" I can not tell you age";
+
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>		
+</body>
+</html>
